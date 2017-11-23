@@ -1,15 +1,12 @@
 const config = {
   // Bot Owner, level 10 by default. A User ID. Should never be anything else than the bot owner's ID.
-  "ownerID": "123456789123456",
+  "ownerID": "207484517898780672",
 
   // Bot Admins, level 9 by default. Array of user ID strings.
-  "admins": [],
-
-  // Bot Support, level 8 by default. Array of user ID strings
-  "support": [],
+  "admins": ["115156616256552962", "156110624718454784"],
 
   // Your Bot's Token. Available on https://discordapp.com/developers/applications/me
-  "token": "mfa.VkO_2G4Qv3T--NO--lWetW_tjND--TOKEN--QFTm6YGtzq9PH--4U--tG0",
+  "token": process.env.DISCORD_TOKEN,
 
   // Default per-server settings. New guilds have these settings. 
 
@@ -81,7 +78,7 @@ const config = {
       name: "Bot Support",
       // The check is by reading if an ID is part of this array. Yes, this means you need to
       // change this and reboot the bot to add a support user. Make it better yourself!
-      check: (message) => config.support.includes(message.author.id)
+      check: (message) => bot.guilds.get('281815661317980160').roles.get('281815839936741377').members.map(member => member.id).includes(message.author.id)
     },
 
     // Bot Admin has some limited access like rebooting the bot or reloading commands.
