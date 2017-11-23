@@ -1,6 +1,4 @@
 const { version } = require("discord.js");
-const moment = require("moment");
-require("moment-duration-format");
 
 exports.run = (client, message, args, level) => { // eslint-disable-line no-unused-vars
   message.reply("check your DM!");
@@ -18,5 +16,5 @@ exports.help = {
   name: "info",
   category: "Miscelaneous",
   description: "Information about DiscordTel",
-  usage: "stats"
+  usage: "info"
 };
